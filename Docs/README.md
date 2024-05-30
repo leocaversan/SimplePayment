@@ -4,9 +4,9 @@
     Rest with cache 💻
 </h1>
 <div align="center" >
-    <img align="center" alt="Python" height="45" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
-    <img align="center" alt="Mongo" height="20" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-plain-wordmark.svg">
-    <img align="center" alt="FastAPI" height="80" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg">
+    <img align="center" alt="Python" height="55" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
+    <img align="center" alt="Mongo" height="70" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-plain-wordmark.svg">
+    <img align="center" alt="FastAPI" height="60" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg">
     <img align="center" alt="docker" height="60" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg">
 </div>
 
