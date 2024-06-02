@@ -1,11 +1,18 @@
 package br.com.simple_payment.notification;
 
-import br.com.simple_payment.transaction.Transaction;
 import org.springframework.stereotype.Service;
+
+import br.com.simple_payment.transaction.Transaction;
 
 @Service
 public class NotificationService {
-    public void notify(Transaction transaction){
 
+    private final NotificationProducer notificationProducer;
+
+    public NotificationService(NotificationProducer notificationProducer) {
+        this.notificationProducer = notificationProducer;
+    }
+    public void notify(Transaction transaction){
+        notificationProducer.sendNotification(transaction);
     }
 }
