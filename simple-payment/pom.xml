@@ -64,6 +64,7 @@
 					<layout>JAR</layout>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
