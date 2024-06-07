@@ -3,10 +3,12 @@ package br.com.simple_payment.transaction;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import lombok.Builder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+@Builder
 @Table("TRANSACTIONS")
 public record Transaction(
     @Id Long id,

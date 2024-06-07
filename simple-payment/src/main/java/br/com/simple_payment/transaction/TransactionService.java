@@ -1,16 +1,16 @@
 package br.com.simple_payment.transaction;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.simple_payment.authorization.AuthorizerService;
 import br.com.simple_payment.notification.NotificationService;
 import br.com.simple_payment.wallet.Wallet;
 import br.com.simple_payment.wallet.WalletRepository;
 import br.com.simple_payment.wallet.WalletType;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 @Service
 public class TransactionService {
@@ -37,7 +37,7 @@ public class TransactionService {
         var list = this.transactionRepository.findAll();
         var listJsonReturn = new ArrayList();
 
-        list.forEach(transaction ->{
+        list.forEach(transaction -> {
             var data = new HashMap<>();
 
             data.put("id", transaction.id());
@@ -57,14 +57,11 @@ public class TransactionService {
 
         validate(transaction);
         authorizerService.authorize(transaction);
-            
-        
 
         var walletPayer = walletRepository.findById(transaction.payer()).get();
         var walletPayee = walletRepository.findById(transaction.payee()).get();
-        
-        
         var newTransaction = transactionRepository.save(transaction);
+
         walletRepository.save(walletPayer.debit(transaction.value()));
         walletRepository.save(walletPayee.credit(transaction.value()));
         
