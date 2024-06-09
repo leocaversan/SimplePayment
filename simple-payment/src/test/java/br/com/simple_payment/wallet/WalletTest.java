@@ -26,6 +26,8 @@ class WalletTest {
         assertEquals(wallet.email(), walletDebit.email());
         assertEquals(wallet.type(), walletDebit.type());
         assertEquals(wallet.full_name(), walletDebit.full_name());
+
+        System.out.println(wallet);
     }
 
     @Test
@@ -36,6 +38,5 @@ class WalletTest {
         assertEquals(wallet.email(), walletCredit.email());
         assertEquals(wallet.type(), walletCredit.type());
         assertEquals(wallet.full_name(), walletCredit.full_name());
-
     }
 }
