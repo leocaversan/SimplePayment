@@ -18,12 +18,14 @@ public class AuthorizerService {
                 .baseUrl("https://util.devi.tools/api/v2/authorize")
                 .build();
     }
-    public void authorize(Transaction transaction){
+    public boolean authorize(){
         var response = restClient.get()
                 .retrieve()
                 .toEntity(Authorization.class);
         if (response.getStatusCode().isError() || !response.getBody().isAuthorized())
-            throw  new UnauthorizedTransactionException("Transaction not authorized");
+            return false;
+
+        return true;
 
     }
 }
