@@ -65,7 +65,7 @@ public class TransactionService {
         walletRepository.save(walletPayer.debit(transaction.value()));
         walletRepository.save(walletPayee.credit(transaction.value()));
         
-        notificationService.notify(transaction);
+//        notificationService.notify(transaction);
         
         return newTransaction;
     }
