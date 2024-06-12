@@ -33,7 +33,10 @@ public class TransactionService {
 
 
     public ArrayList getData() {
-        
+
+        if (!authorizerService.authorize())
+            throw  new UnauthorizedTransactionException("Transaction not authorized");
+
         var list = this.transactionRepository.findAll();
         var listJsonReturn = new ArrayList();
 
@@ -56,7 +59,9 @@ public class TransactionService {
     public Transaction create(Transaction transaction){
 
         validate(transaction);
-        authorizerService.authorize(transaction);
+
+        if (!authorizerService.authorize())
+            throw  new UnauthorizedTransactionException("Transaction not authorized");
 
         var walletPayer = walletRepository.findById(transaction.payer()).get();
         var walletPayee = walletRepository.findById(transaction.payee()).get();
